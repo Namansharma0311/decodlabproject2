@@ -1,0 +1,171 @@
+{
+  "info": {
+    "name": "Far & Few AI API",
+    "description": "Complete API test collection for the Far & Few AI travel platform backend.",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    { "key": "baseUrl", "value": "http://localhost:5000/api" }
+  ],
+  "item": [
+    {
+      "name": "Health Check",
+      "request": { "method": "GET", "url": "{{baseUrl}}/health" }
+    },
+    {
+      "name": "Destinations",
+      "item": [
+        { "name": "Get All Destinations", "request": { "method": "GET", "url": "{{baseUrl}}/destinations" } },
+        { "name": "Search Destinations", "request": { "method": "GET", "url": "{{baseUrl}}/destinations?search=santorini" } },
+        { "name": "Filter by Budget", "request": { "method": "GET", "url": "{{baseUrl}}/destinations?maxBudget=2000" } },
+        { "name": "Sort by Rating", "request": { "method": "GET", "url": "{{baseUrl}}/destinations?sort=rating" } },
+        { "name": "Get Destination By Id (valid)", "request": { "method": "GET", "url": "{{baseUrl}}/destination/dst_001" } },
+        { "name": "Get Destination By Id (404)", "request": { "method": "GET", "url": "{{baseUrl}}/destination/does_not_exist" } }
+      ]
+    },
+    {
+      "name": "Packages",
+      "item": [
+        { "name": "Get All Packages", "request": { "method": "GET", "url": "{{baseUrl}}/packages" } },
+        { "name": "Sort Packages by Price", "request": { "method": "GET", "url": "{{baseUrl}}/packages?sort=price" } }
+      ]
+    },
+    {
+      "name": "Testimonials & Reviews",
+      "item": [
+        { "name": "Get Testimonials", "request": { "method": "GET", "url": "{{baseUrl}}/testimonials" } },
+        { "name": "Get Reviews", "request": { "method": "GET", "url": "{{baseUrl}}/reviews" } },
+        {
+          "name": "Submit Review (valid)",
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "url": "{{baseUrl}}/review",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"Jane Doe\",\n  \"rating\": 5,\n  \"review\": \"Absolutely incredible trip planning experience!\"\n}"
+            }
+          }
+        },
+        {
+          "name": "Submit Review (validation error)",
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "url": "{{baseUrl}}/review",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"\",\n  \"rating\": 9,\n  \"review\": \"ok\"\n}"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Contact",
+      "item": [
+        {
+          "name": "Submit Contact Form (valid)",
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "url": "{{baseUrl}}/contact",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"Jane Doe\",\n  \"email\": \"jane@example.com\",\n  \"phone\": \"+14155552671\",\n  \"message\": \"I would like to plan a trip to Santorini for two.\"\n}"
+            }
+          }
+        },
+        {
+          "name": "Submit Contact Form (validation error)",
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "url": "{{baseUrl}}/contact",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"\",\n  \"email\": \"not-an-email\",\n  \"phone\": \"123\",\n  \"message\": \"hi\"\n}"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Booking",
+      "item": [
+        {
+          "name": "Create Booking (valid)",
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "url": "{{baseUrl}}/booking",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"destination\": \"Santorini, Greece\",\n  \"checkIn\": \"2026-09-01\",\n  \"checkOut\": \"2026-09-06\",\n  \"persons\": 2,\n  \"budget\": 2400\n}"
+            }
+          }
+        },
+        {
+          "name": "Create Booking (invalid dates)",
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "url": "{{baseUrl}}/booking",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"destination\": \"Santorini, Greece\",\n  \"checkIn\": \"2026-09-06\",\n  \"checkOut\": \"2026-09-01\",\n  \"persons\": 2,\n  \"budget\": 2400\n}"
+            }
+          }
+        },
+        {
+          "name": "Create Booking (validation error)",
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "url": "{{baseUrl}}/booking",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"destination\": \"\",\n  \"checkIn\": \"not-a-date\",\n  \"checkOut\": \"2026-09-01\",\n  \"persons\": 0,\n  \"budget\": -5\n}"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Newsletter",
+      "item": [
+        {
+          "name": "Subscribe (valid)",
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "url": "{{baseUrl}}/newsletter",
+            "body": { "mode": "raw", "raw": "{\n  \"email\": \"traveler@example.com\"\n}" }
+          }
+        },
+        {
+          "name": "Subscribe (duplicate -> 409)",
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "url": "{{baseUrl}}/newsletter",
+            "body": { "mode": "raw", "raw": "{\n  \"email\": \"traveler@example.com\"\n}" }
+          }
+        },
+        {
+          "name": "Subscribe (validation error)",
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "url": "{{baseUrl}}/newsletter",
+            "body": { "mode": "raw", "raw": "{\n  \"email\": \"not-an-email\"\n}" }
+          }
+        }
+      ]
+    },
+    {
+      "name": "404 Route",
+      "request": { "method": "GET", "url": "{{baseUrl}}/does-not-exist" }
+    }
+  ]
+}
