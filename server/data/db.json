@@ -1,0 +1,228 @@
+{
+  "destinations": [
+    {
+      "id": "dst_001",
+      "name": "Santorini, Greece",
+      "country": "Greece",
+      "category": "Island Luxury",
+      "price": 2400,
+      "rating": 4.9,
+      "duration": "6 Days / 5 Nights",
+      "image": "https://picsum.photos/seed/santorini-1/900/700",
+      "description": "Whitewashed cliffside villas overlooking the Aegean Sea, legendary sunsets over Oia, and infinity pools carved into volcanic rock.",
+      "tags": [
+        "romantic",
+        "island",
+        "honeymoon",
+        "luxury"
+      ],
+      "coordinates": {
+        "lat": 36.3932,
+        "lng": 25.4615
+      }
+    },
+    {
+      "id": "dst_002",
+      "name": "Kyoto, Japan",
+      "country": "Japan",
+      "category": "Cultural Escape",
+      "price": 1950,
+      "rating": 4.8,
+      "duration": "7 Days / 6 Nights",
+      "image": "https://picsum.photos/seed/kyoto-1/900/700",
+      "description": "Ancient temples, bamboo groves, and private tea ceremonies in Japan's cultural capital, paired with five-star ryokan stays.",
+      "tags": [
+        "culture",
+        "temples",
+        "food",
+        "luxury"
+      ],
+      "coordinates": {
+        "lat": 35.0116,
+        "lng": 135.7681
+      }
+    },
+    {
+      "id": "dst_003",
+      "name": "Maldives",
+      "country": "Maldives",
+      "category": "Overwater Villas",
+      "price": 3800,
+      "rating": 5,
+      "duration": "5 Days / 4 Nights",
+      "image": "https://picsum.photos/seed/maldives-1/900/700",
+      "description": "Private overwater villas, turquoise lagoons, and butler service on your own slice of the Indian Ocean.",
+      "tags": [
+        "beach",
+        "island",
+        "honeymoon",
+        "luxury"
+      ],
+      "coordinates": {
+        "lat": 3.2028,
+        "lng": 73.2207
+      }
+    },
+    {
+      "id": "dst_004",
+      "name": "Swiss Alps, Switzerland",
+      "country": "Switzerland",
+      "category": "Alpine Retreat",
+      "price": 2700,
+      "rating": 4.7,
+      "duration": "6 Days / 5 Nights",
+      "image": "https://picsum.photos/seed/swissalps-1/900/700",
+      "description": "Panoramic train rides, ski-in chalets, and Michelin dining nestled among snow-capped peaks.",
+      "tags": [
+        "mountains",
+        "adventure",
+        "luxury"
+      ],
+      "coordinates": {
+        "lat": 46.5197,
+        "lng": 7.9962
+      }
+    },
+    {
+      "id": "dst_005",
+      "name": "Marrakech, Morocco",
+      "country": "Morocco",
+      "category": "Desert Luxury",
+      "price": 1600,
+      "rating": 4.6,
+      "duration": "5 Days / 4 Nights",
+      "image": "https://picsum.photos/seed/marrakech-1/900/700",
+      "description": "Riad courtyards, private desert camps under the stars, and the vibrant chaos of the medina souks.",
+      "tags": [
+        "desert",
+        "culture",
+        "adventure"
+      ],
+      "coordinates": {
+        "lat": 31.6295,
+        "lng": -7.9811
+      }
+    },
+    {
+      "id": "dst_006",
+      "name": "Amalfi Coast, Italy",
+      "country": "Italy",
+      "category": "Coastal Luxury",
+      "price": 2900,
+      "rating": 4.9,
+      "duration": "6 Days / 5 Nights",
+      "image": "https://picsum.photos/seed/amalfi-1/900/700",
+      "description": "Cliffside lemon groves, private yacht days, and pastel villages perched above the Tyrrhenian Sea.",
+      "tags": [
+        "romantic",
+        "coastal",
+        "luxury",
+        "food"
+      ],
+      "coordinates": {
+        "lat": 40.634,
+        "lng": 14.6027
+      }
+    }
+  ],
+  "packages": [
+    {
+      "id": "pkg_001",
+      "name": "Aegean Escape",
+      "destinationId": "dst_001",
+      "price": 2400,
+      "nights": 5,
+      "inclusions": [
+        "5-star villa",
+        "Private transfers",
+        "Daily breakfast",
+        "Sunset cruise"
+      ],
+      "popular": true
+    },
+    {
+      "id": "pkg_002",
+      "name": "Kyoto Heritage Trail",
+      "destinationId": "dst_002",
+      "price": 1950,
+      "nights": 6,
+      "inclusions": [
+        "Ryokan stay",
+        "Tea ceremony",
+        "Private guide",
+        "Bullet train pass"
+      ],
+      "popular": true
+    },
+    {
+      "id": "pkg_003",
+      "name": "Maldives Overwater Dream",
+      "destinationId": "dst_003",
+      "price": 3800,
+      "nights": 4,
+      "inclusions": [
+        "Overwater villa",
+        "All-inclusive dining",
+        "Spa credit",
+        "Seaplane transfer"
+      ],
+      "popular": true
+    },
+    {
+      "id": "pkg_004",
+      "name": "Alpine Grand Tour",
+      "destinationId": "dst_004",
+      "price": 2700,
+      "nights": 5,
+      "inclusions": [
+        "Chalet stay",
+        "Ski pass",
+        "Panoramic train",
+        "Fondue dinner"
+      ],
+      "popular": false
+    }
+  ],
+  "testimonials": [
+    {
+      "id": "test_001",
+      "name": "Ananya Sharma",
+      "location": "Delhi, India",
+      "rating": 5,
+      "text": "Far & Few AI planned our Santorini honeymoon down to the last detail. The AI suggestions felt like they were made by someone who actually knew us.",
+      "avatar": "avatar1.jpg"
+    },
+    {
+      "id": "test_002",
+      "name": "Daniel Cole",
+      "location": "London, UK",
+      "rating": 5,
+      "text": "Booking was effortless and the itinerary for Kyoto was unbelievably well curated. Worth every penny.",
+      "avatar": "avatar2.jpg"
+    },
+    {
+      "id": "test_003",
+      "name": "Sofia Marino",
+      "location": "Milan, Italy",
+      "rating": 4.8,
+      "text": "The Amalfi Coast package exceeded expectations. The platform itself feels like a five-star product.",
+      "avatar": "avatar3.jpg"
+    }
+  ],
+  "contacts": [],
+  "bookings": [
+    {
+      "id": "booking_mrahiwhoo054bh",
+      "destination": "santorini",
+      "email": "namansharma031106@gamil.com",
+      "checkIn": "2026-07-06",
+      "checkOut": "2026-07-10",
+      "persons": 2,
+      "budget": 2400,
+      "status": "confirmed",
+      "createdAt": "2026-07-07T10:07:10.332Z"
+    }
+  ],
+  "newsletter": [],
+  "reviews": []
+}
